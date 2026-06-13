@@ -1,0 +1,17 @@
+PROMGEN: Xilinx Prom Generator P.20131013
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p mcs -c FF -o C:\Users\yang\Desktop\shaoxie//top_lvds_20M -s 8192 -u 0000 C:/Users/yang/Desktop/shaoxie/top.bit -spi 
+
+PROM C:\Users\yang\Desktop\shaoxie\top_lvds_20M.prm map: Sat Mar 07 15:55:47 2026
+
+Calculating PROM checksum with fill value ff
+
+Format        Mcs86 (32-bit)
+Size          8192K
+PROM start    0000:0000
+PROM end      007f:ffff
+PROM checksum 46331521
+
+        Addr1        Addr2                     Date File(s)
+    0000:0000    003a:607b     Mar 07 10:22:10 2026 C:/Users/yang/Desktop/shaoxie/top.bit

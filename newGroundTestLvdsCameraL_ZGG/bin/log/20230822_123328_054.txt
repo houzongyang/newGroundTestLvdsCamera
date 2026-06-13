@@ -1,0 +1,17 @@
+2023-08-22T12:33:28.341 [Debug  ] <> 该编号板卡不存在! 0 0
+2023-08-22T12:33:28.341 [Debug  ] <> LVDS channel num: 0
+2023-08-22T12:33:28.341 [Debug  ] <> 该编号板卡不存在! 0 1
+2023-08-22T12:33:28.341 [Debug  ] <> RS422 channel num: 1
+2023-08-22T12:33:28.341 [Debug  ] <> 该编号板卡不存在! 0 2
+2023-08-22T12:33:28.341 [Debug  ] <> CAN channel num: 2
+2023-08-22T12:33:50.737 [Debug  ] <> on_pb_parse_data_clicked!!!
+2023-08-22T12:33:50.738 [Debug  ] <> processLVDSData: QThread(0x56bc098, name = "Thread (pooled)")
+2023-08-22T12:33:50.738 [Debug  ] <> "bin"
+2023-08-22T12:33:50.750 [Debug  ] <> 6144
+2023-08-22T12:36:04.703 [Debug  ] <> on_pb_parse_data_clicked!!!
+2023-08-22T12:36:04.715 [Debug  ] <> processLVDSData: QThread(0x56bc098, name = "Thread (pooled)")
+2023-08-22T12:36:04.715 [Debug  ] <> "bin"
+2023-08-22T12:36:04.715 [Debug  ] <> 2048
+2023-08-22T12:36:04.718 [Debug  ] <> LVDS数据CRC错误! clc: 43690 lvds: 22034
+2023-08-22T12:36:04.718 [Debug  ] <> 源包序列计数: 0 packLength: 2035 时间码: 77020.4
+2023-08-22T12:36:04.719 [Debug  ] <> 跟踪数据包!

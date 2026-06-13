@@ -1,0 +1,10 @@
+2023-08-22T12:29:51.935 [Debug  ] <> 该编号板卡不存在! 0 0
+2023-08-22T12:29:51.935 [Debug  ] <> LVDS channel num: 0
+2023-08-22T12:29:51.935 [Debug  ] <> 该编号板卡不存在! 0 1
+2023-08-22T12:29:51.935 [Debug  ] <> RS422 channel num: 1
+2023-08-22T12:29:51.935 [Debug  ] <> 该编号板卡不存在! 0 2
+2023-08-22T12:29:51.935 [Debug  ] <> CAN channel num: 2
+2023-08-22T12:30:06.723 [Debug  ] <> on_pb_parse_data_clicked!!!
+2023-08-22T12:30:06.737 [Debug  ] <> processLVDSData: QThread(0x562cfb8, name = "Thread (pooled)")
+2023-08-22T12:30:06.737 [Debug  ] <> "bin"
+2023-08-22T12:30:06.740 [Debug  ] <> 2344960

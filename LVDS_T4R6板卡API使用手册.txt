@@ -1,0 +1,137 @@
+
+
+LVDS_T4R6
+ LVDS_T4R6卡驱动和API
+
+目录
+
+1. 驱动程序说明	2
+2. 动态链接库接口说明	2
+2.1 返回值列表	2
+2.2 结构体说明	2
+2.3 波特率参数设置与波特率的关系	3
+2.4 波特率参数软件使用	3
+2.5 DFCAN_InitLib	4
+2.6 DFCAN_UninitLib	4
+2.8 DFCAN_Open	4
+2.9 DFCAN_Close	4
+2.10 DFCAN_Reset	4
+2.12 DFCAN_Init	5
+2.13 DFCAN_Enable	5
+2.14 DFCAN_Set_SendState	5
+2.15 DFCAN_SetTTLTime	5
+2.16 DFCAN_TxBufferCnt	6
+2.17 DFCAN_RxBufferCnt	6
+2.18 DFCAN_Set_SendMode	6
+2.19 DFCAN_Set_PulseWidth	6
+2.20 DFCAN_HiPriorityFrame	6
+2.21 DFCAN_Rerminal_R	7
+2.22 DFCAN_WriteFrame_Most	7
+2.23 DFCAN_ReadFrame_Most	7
+2.24 DFCAN_Accuracy_Select	7
+2.25 DFCAN_Clear_Buffer	8
+3. 函数调用顺序	8
+
+1. 驱动程序说明
+驱动文件：DRIVER.inf
+支持的操作系统：WinXp、Win7、Win10
+2. 动态链接库接口说明
+库文件：LVDS_T4R6.dll
+头文件：LVDS_T4R6.h
+
+
+2.5 LVDS_T4R6_LibInit
+函数原型：DLL UINT32 __stdcall LVDS_T4R6_LibInit();
+函数功能：初始化库
+参数说明： 无
+返回值：可用板卡数量
+
+
+2.6 LVDS_T4R6_UninitLib
+函数原型：DLL BOOL __stdcall LVDS_T4R6_LibUninit();
+函数功能：卸载库
+参数说明： 无
+返回值：true 成功  false 错误
+
+
+2.8 LVDS_T4R6_Open
+函数原型：DLL BOOL __stdcall LVDS_T4R6_Open(UINT32 uCardId);
+函数功能：打开板卡
+参数说明：uCardId:输入参数，第几块板卡
+返回值：true 成功  false 错误
+
+
+2.9 LVDS_T4R6_Close
+函数原型：DLL BOOL __stdcall LVDS_T4R6_Close(UINT32 uCardId);
+函数功能：关闭板卡
+参数说明：uCardId:输入参数，第几块板卡
+返回值：true 成功  false 错误
+
+
+2.10 LVDS_T4R6_Reset
+函数原型：DLL BOOL __stdcall LVDS_T4R6_Reset(UINT32 uCardId);
+函数功能：复位板卡
+参数说明：uCardId:输入参数，第几块板卡
+返回值：true 成功  false 错误
+
+
+2.10  LVDS_T4R6_Set_FrameSize
+函数原型：DLL BOOL __stdcall LVDS_T4R6_Set_FrameSize(UINT8 uCardId,UINT32 uSize);
+函数功能：设置接收一帧数据量大小
+参数说明：uCardId:输入参数，第几块板卡
+              uSize:一帧数据的数据量(单位:字节)
+返回值：true 成功  false 错误
+
+2.10  LVDS_T4R6_RX_Enable
+函数原型：DLL BOOL __stdcall LVDS_T4R6_RX_Enable(UINT8 uCardId,UINT8 uEnable);
+函数功能：设置接收一帧数据量大小
+参数说明：uCardId:输入参数，第几块板卡
+              uEnable： 0:关闭接收  1:开始接收
+返回值：true 成功  false 错误
+
+
+2.10  LVDS_T4R6_RX_DataCnt
+函数原型：DLL BOOL __stdcall LVDS_T4R6_RX_DataCnt(UINT8 uCardId,UINT32 *pDataCnt);
+函数功能：获取可以接收的数据量
+参数说明：uCardId:输入参数，第几块板卡
+              pDataCnt：数据量(单位:字节)
+返回值：true 成功  false 错误
+
+2.10  LVDS_T4R6_RX_Data
+函数原型：DLL BOOL __stdcall LVDS_T4R6_RX_Data(UINT8 uCardId,UINT8 *pData,UINT32 uDataCnt)
+函数功能：接收数据
+参数说明：uCardId:输入参数，第几块板卡
+          pData:数据包
+              uDataCnt：数据量(单位:字节)
+返回值：true 成功  false 错误
+
+
+
+3.	函数调用顺序
+3.1打开板卡
+  DFCAN_InitLib :加载库
+DFCAN_Open:打开板卡
+DFCAN_Reset:复位板卡
+3.2初始化CAN
+DFCAN_Init:初始化CAN
+3.3设置各种参数
+DFCAN_SetTTLTime:设置同步TTL发送时间
+DFCAN_Set_SendMode:设置触发方式
+DFCAN_Set_PulseWidth:设置同步信号脉宽判断设置
+DFCAN_Rerminal_R:CAN终端电阻配置
+DFCAN_Accuracy_Select:设置精度
+
+3.4 发送/写入数据
+DFCAN_Set_SendState:设置开启发送通道
+DFCAN_TxBufferCnt:查询发送缓冲区可以写入多少帧
+DFCAN_WriteFrame_Most:写入数据
+
+3.5 接收数据
+ DFCAN_RxBufferCnt:查询:接收缓冲区有多少帧可以接收
+ DFCAN_ReadFrame_Most:读取CAN帧数据
+
+3.6 发送高优先级数据(是指再循环发送普通数据的时候,此时可以直接写入并发送高优先级数据)
+DFCAN_HiPriorityFrame:写入高优先级数据
+
+
+

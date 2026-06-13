@@ -1,0 +1,11 @@
+# PROMGEN: Xilinx Prom Generator P.20131013
+# Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+SOFTWARE_VERSION P.20131013
+DATE            03/07/2026 - 15:55
+SOURCE          C:\Users\yang\Desktop\shaoxie\top_lvds_20M.mcs
+DEVICE          8192K
+DATA_WIDTH      1
+FILL_DATA       0xFF
+SIGNATURE       0x46331521
+START_ADDRESS   0x00000000 END_ADDRESS 0x003A607B DIRECTION_UP   "C:/Users/yang/Desktop/shaoxie/top.bit" 7a100tcsg324
